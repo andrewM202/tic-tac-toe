@@ -4,16 +4,31 @@
   box-sizing: border-box;
 }
 
+body {
+    align-items: center;
+    display: flex;
+    font-family: Helvetica, Arial, sans-serif;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #9ddfd3;
+}
+
+h1 {
+  text-align: center;
+}
+
 .game-board {
   display: grid;
-  width: 300px;
-  length: 300px;
+  width: 600px;
+  length: 600px;
   grid-template-columns: auto auto auto;
+  background-color: #f6f5f1;
 }
-.block{
+
+.block {
   display: flex;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
