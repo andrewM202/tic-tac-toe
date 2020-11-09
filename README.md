@@ -10,7 +10,7 @@ Things to do for the JavaScript
 - Way to randomly determine if X or O goes first (probably with math.random)
 - If board is filled, or if 3 in a row, stop the game
   - How to determine if 3 in a row? Do we want to hard code for each of the 8 possibilities, or some kind of function to scan the board?
-  - If 3 in a row, draw a line between 3 consecutive X's or O's that won
+  - Print results from winner/draw beneath the grid somehow
 
 
 
@@ -20,3 +20,4 @@ Things to do for the JavaScript
 Extra, optional things after the game is functional
 - Reset button
 - Responsive design
+- If 3 in a row, draw a line between 3 consecutive X's or O's that won
