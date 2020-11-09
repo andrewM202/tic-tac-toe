@@ -1,4 +1,6 @@
+
 function change(element) {
+  console.log("hi");
    if (element.textContent === ""){
       element.textContent = "X";
     } else if (element.textContent === "X") {
@@ -8,8 +10,11 @@ function change(element) {
     }
 }
 
-document.querySelectorAll('.block').forEach(function (element) {
-   element.addEventListener('click', change(element));
-});
+/* Test below for adding event listeners */
+window.onload = function() {
+  document.querySelectorAll('.block').forEach(function (element) {
+     element.addEventListener('click', change(element));
+  });
+}
 
-let squareOne = document.querySelector('square-one p');
+/* Test above for adding event listeners */
