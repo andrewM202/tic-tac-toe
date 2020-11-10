@@ -1,7 +1,6 @@
-
 /* Create a random generator for X or O */
 let randomXorO = Math.random();
-if(randomXorO < 0.5) {
+if (randomXorO < 0.5) {
   randomXorO = "X";
 } else {
   randomXorO = "O";
@@ -11,7 +10,8 @@ if(randomXorO < 0.5) {
 let firstTurn = true;
 /* Create a variable to switch between X and O. This variable is opposite of randomXorO */
 let OsTurn;
-if(randomXorO === "X") { /* If randomXorO is X, then O is up for second turn, hence OsTurn is true */
+if (randomXorO === "X") {
+  /* If randomXorO is X, then O is up for second turn, hence OsTurn is true */
   OsTurn = true;
 } else {
   OsTurn = false;
@@ -24,7 +24,7 @@ function change(element) {
      if (this.firstChild.textContent === "") { /* It checks this.firstChild since that is the <p> */
         this.firstChild.textContent = randomXorO;
         firstTurn = false; /* After first turn is over, switch firstTurn to false */
-        if(randomXorO === "X") { 
+        if(randomXorO === "X") {
           currentPlayer.textContent = "Current player: O"
         } else {
           currentPlayer.textContent = "Current player: X";
@@ -41,6 +41,7 @@ function change(element) {
         currentPlayer.textContent = "Current player: O";
       }
     }
+  }
 }
 
 /* Add event listeners and put in first player below */
@@ -50,7 +51,7 @@ window.onload = function() {
   currentPlayer.textContent = "Current player: " + randomXorO;
 
   /* Add event listener to each block in grid */
-  document.querySelectorAll('.block').forEach(function (element) {
-     element.addEventListener('click', change);
+  document.querySelectorAll('.block').forEach(function(element) {
+    element.addEventListener('click', change);
   });
 }
