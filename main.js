@@ -24,16 +24,21 @@ function change(element) {
      if (this.firstChild.textContent === "") { /* It checks this.firstChild since that is the <p> */
         this.firstChild.textContent = randomXorO;
         firstTurn = false; /* After first turn is over, switch firstTurn to false */
+        if(randomXorO === "X") { 
+          currentPlayer.textContent = "Current player: O"
+        } else {
+          currentPlayer.textContent = "Current player: X";
+        }
       }
     } else if (this.firstChild.textContent === "") { /* If its not first turn, alternate between X and O */
       if(OsTurn === true) {
         this.firstChild.textContent = "O";
         OsTurn = false;
-        currentPlayer.textContent = "Current player: O";
+        currentPlayer.textContent = "Current player: X";
       } else {
         this.firstChild.textContent = "X";
         OsTurn =  true;
-        currentPlayer.textContent = "Current player: X";
+        currentPlayer.textContent = "Current player: O";
       }
     }
 }
