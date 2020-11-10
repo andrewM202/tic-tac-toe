@@ -39,3 +39,20 @@ h1 {
   font-size: 6.5em;
   font-weight: lighter;
 }
+
+.current-player {
+  margin-top: 30px;
+  width: 600px;
+  height: 135px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-player p {
+  font-size: 2.5em;
+  font-weight: lighter;
+}
