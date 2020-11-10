@@ -1,18 +1,18 @@
 
 function change(element) {
-   if (element.textContent === "") {
-      element.textContent = "X";
-    } else if (element.textContent === "X") {
-      element.textContent = "O";
+   if (this.textContent === "") {
+      this.textContent = "X";
+    } else if (this.textContent === "X") {
+      this.textContent = "O";
     } else {
-      element.textContent = "";
+      this.textContent = "";
     }
 }
 
 /* Test below for adding event listeners */
 window.onload = function() {
   document.querySelectorAll('.block').forEach(function (element) {
-     element.addEventListener('click', change(element));
+     element.addEventListener('click', change);
   });
 }
 
