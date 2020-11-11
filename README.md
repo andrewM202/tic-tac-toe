@@ -19,5 +19,5 @@ Things to do for the JavaScript
 
 Extra, optional things after the game is functional
 - Reset button
-- Responsive design
+<!--finished--> Responsive design
 - If 3 in a row, draw a line between 3 consecutive X's or O's that won
