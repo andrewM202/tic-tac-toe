@@ -8,9 +8,9 @@ Things to do for the JavaScript
   -   <!-- Finished --> Alternate between X or O on each click
   -  <!-- Partially Finished --> After a grid tile is clicked, it cannot be clicked again (maybe remove the event listener?)
 -   <!-- Finished --> Way to randomly determine if X or O goes first (probably with math.random)
-- If board is filled, or if 3 in a row, stop the game
-  - How to determine if 3 in a row? Do we want to hard code for each of the 8 possibilities, or some kind of function to scan the board?
-  - Print results from winner/draw beneath the grid somehow
+<!--finished-->- If board is filled, or if 3 in a row, stop the game
+  <!--finished--> How to determine if 3 in a row? Do we want to hard code for each of the 8 possibilities, or some kind of function to scan the board?
+  <!--finished-->- Print results from winner/draw beneath the grid somehow
 
 
 
