@@ -62,57 +62,58 @@ function checkForWinOrDraw() {
   //Check if horizontal win for X or O
   if (checkO(tileOne) && checkO(tileTwo) && checkO(tileThree)) {
     //O or first row
-    rmTileListeners('O');
+    return rmTileListeners('O');
   } else if (checkX(tileOne) && checkX(tileTwo) && checkX(tileThree)) {
     //X for first row
-    rmTileListeners('X');
+    return rmTileListeners('X');
   } else if (checkO(tileFour) && checkO(tileFive) && checkO(tileSix)) {
     //O for second row
-    rmTileListeners('O');
+    return rmTileListeners('O');
   } else if (checkX(tileFour) && checkX(tileFive) && checkX(tileSix)) {
     //X for second row
-    rmTileListeners('X');
+    return rmTileListeners('X');
   } else if (checkO(tileSeven) && checkO(tileEight) && checkO(tileNine)) {
     //O for third row
-    rmTileListeners('O');
+    return rmTileListeners('O');
   } else if (checkX(tileSeven) && checkX(tileEight) && checkX(tileNine)) {
     //X for third row
+    return rmTileListeners('X');
   }
 
   //Check for column win for X or O
   if (checkO(tileOne) && checkO(tileFour) && checkO(tileSeven)) {
     //O for first column
-    rmTileListeners('O');
+    return rmTileListeners('O');
   } else if (checkX(tileOne) && checkX(tileFour) && checkX(tileSeven)) {
     //X for first column
-    rmTileListeners('X');
+    return rmTileListeners('X');
   } else if (checkO(tileTwo) && checkO(tileFive) && checkO(tileEight)) {
     //O for second column
-    rmTileListeners('O');
+    return rmTileListeners('O');
   } else if (checkX(tileTwo) && checkX(tileFive) && checkX(tileEight)) {
     //X for second column
-    rmTileListeners('X');
+    return rmTileListeners('X');
   } else if (checkO(tileThree) && checkO(tileSix) && checkO(tileNine)) {
     //O for third column
-    rmTileListeners('O');
+    return rmTileListeners('O');
   } else if (checkX(tileThree) && checkX(tileSix) && checkX(tileNine)) {
     //X for third column
-    rmTileListeners('X');
+    return rmTileListeners('X');
   }
 
   //Check for diagonal win for X or O
   if (checkO(tileOne) && checkO(tileFive) && checkO(tileNine)) {
     //O for top-left to bottom-right
-    rmTileListeners('O');
+    return rmTileListeners('O');
   } else if (checkX(tileOne) &&checkX(tileFive) && checkX(tileNine)) {
     //X for top-left to bottom-right
-    rmTileListeners('X');
+    return rmTileListeners('X');
   } else if(checkO(tileThree) && checkO(tileFive) && checkO(tileSeven)) {
     //O for top-right to bottom-left
-    rmTileListeners('O');
+    return rmTileListeners('O');
   } else if(checkX(tileThree) && checkX(tileFive) && checkX(tileSeven)) {
     //X for top-right to bottom-left
-    rmTileListeners('X');
+    return rmTileListeners('X');
   }
 
   //Check for a draw
