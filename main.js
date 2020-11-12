@@ -1,22 +1,26 @@
 
 /* Create a random generator for X or O */
-let randomXorO = Math.random();
-if(randomXorO < 0.5) {
-  randomXorO = "X";
-} else {
-  randomXorO = "O";
+let randomPlayer;
+function randomXorO() {
+  let randomNum = Math.random();
+  if(randomNum < 0.5) {
+    randomPlayer = "X";
+  } else {
+    randomPlayer = "O";
+  }
 }
 
 /* Create a boolean to check if its first turn */
 let firstTurn = true;
 /* Create a variable to switch between X and O. This variable is opposite of randomXorO */
 let OsTurn;
-if(randomXorO === "X") { /* If randomXorO is X, then O is up for second turn, hence OsTurn is true */
-  OsTurn = true;
-} else {
-  OsTurn = false;
+function refreshOsTurn() {
+  if(randomPlayer === "X") { /* If randomXorO is X, then O is up for second turn, hence OsTurn is true */
+    OsTurn = true;
+  } else {
+    OsTurn = false;
+  }
 }
-
 /* If the textContent of the node is an X, return true. */
 function checkX(node) {
   if(node.textContent === "X") {
@@ -43,7 +47,6 @@ function rmTileListeners(winner) {
   document.querySelectorAll('.block').forEach(function (element) {
      element.removeEventListener('click', change);
   });
-
 }
 
 //If there is a win or draw, delete all the event listeners
@@ -136,6 +139,8 @@ function checkForWinOrDraw() {
 
 
 
+
+
 function change(element) {
 
   let currentPlayer = document.querySelector('.current-player p');
@@ -143,9 +148,9 @@ function change(element) {
 
    if (firstTurn) { /* If its first turn, have it be random whether O or X goes first */
      if (pEl.textContent === "") { /* It checks this.firstChild since that is the <p> */
-        pEl.textContent = randomXorO;
+        pEl.textContent = randomPlayer;
         firstTurn = false; /* After first turn is over, switch firstTurn to false */
-        if(randomXorO === "X") {
+        if(randomPlayer === "X") {
           currentPlayer.textContent = "Current player: O";
         } else {
           currentPlayer.textContent = "Current player: X";
@@ -167,12 +172,38 @@ function change(element) {
 
 /* Add event listeners and put in first player below */
 window.onload = function() {
+  //Give a random value to starting player
+  randomXorO();
+  //Give value to OsTurn
+  refreshOsTurn();
   /* Change current-player div's <p> to have current player */
   let currentPlayer = document.querySelector('.current-player p');
-  currentPlayer.textContent = "Current player: " + randomXorO;
+  currentPlayer.textContent = "Current player: " + randomPlayer;
 
   /* Add event listener to each block in grid */
   document.querySelectorAll('.block').forEach(function (element) {
      element.addEventListener('click', change);
+  });
+
+  //Add reset button functionality
+  document.querySelector('.reset-button').addEventListener('click', () => {
+    //Give a new random value to starting player
+    randomXorO();
+    //firstTurn turned back to true
+    firstTurn = true;
+    //refresh OsTurn variable to new value based on randomPlayer
+    refreshOsTurn();
+    //Remove event listeners from blocks
+    document.querySelectorAll('.block').forEach(function (element) {
+       element.removeEventListener('click', change);
+    });
+    //Add new event listeners to blocks
+    document.querySelectorAll('.block').forEach(function (element) {
+       element.addEventListener('click', change);
+       //Reset text content in each tile
+       element.querySelector('p').textContent = "";
+    });
+    //Reset text content in current player
+    document.querySelector('.current-player p').textContent = "Current player: " + randomPlayer;
   });
 }
